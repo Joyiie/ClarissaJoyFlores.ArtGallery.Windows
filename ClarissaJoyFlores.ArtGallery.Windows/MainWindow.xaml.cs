@@ -37,5 +37,11 @@ namespace ClarissaJoyFlores.ArtGallery.Windows
             }
 
         }
+
+        private void btnUsers1_Click(object sender, RoutedEventArgs e)
+        {
+            Users.UsersList Listwindow = new Users.UsersList();
+            Listwindow.Show();
+        }
     }
 }

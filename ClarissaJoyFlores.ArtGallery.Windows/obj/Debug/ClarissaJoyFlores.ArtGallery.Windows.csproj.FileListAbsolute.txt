@@ -22,3 +22,5 @@ C:\Users\DENNIS FLORES OCAMPO\Documents\ClarissaJoyFlores.ArtGallery.Windows\Cla
 C:\Users\DENNIS FLORES OCAMPO\Documents\ClarissaJoyFlores.ArtGallery.Windows\ClarissaJoyFlores.ArtGallery.Windows\obj\Debug\ClarissaJoyFlores.ArtGallery.Windows.csproj.CopyComplete
 C:\Users\DENNIS FLORES OCAMPO\Documents\ClarissaJoyFlores.ArtGallery.Windows\ClarissaJoyFlores.ArtGallery.Windows\obj\Debug\ClarissaJoyFlores.ArtGallery.Windows.exe
 C:\Users\DENNIS FLORES OCAMPO\Documents\ClarissaJoyFlores.ArtGallery.Windows\ClarissaJoyFlores.ArtGallery.Windows\obj\Debug\ClarissaJoyFlores.ArtGallery.Windows.pdb
+C:\Users\DENNIS FLORES OCAMPO\Documents\ClarissaJoyFlores.ArtGallery.Windows\ClarissaJoyFlores.ArtGallery.Windows\obj\Debug\Users\UsersList.g.cs
+C:\Users\DENNIS FLORES OCAMPO\Documents\ClarissaJoyFlores.ArtGallery.Windows\ClarissaJoyFlores.ArtGallery.Windows\obj\Debug\Users\UsersList.baml

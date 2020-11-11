@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:ClarissaJoyFlores.ArtGallery.Windows"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid x:Name="btnUsers">
+        <Button x:Name="btnUsers1" Content="Users" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Margin="28,54,0,0" Height="40" Click="btnUsers1_Click"/>
+
     </Grid>
 </Window>
