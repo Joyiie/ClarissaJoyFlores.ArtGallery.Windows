@@ -79,9 +79,60 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Artists\ArtistAdd.xaml.cs">
+      <DependentUpon>ArtistAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Artists\ArtistList.xaml.cs">
+      <DependentUpon>ArtistList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Artists\ArtistUpdate.xaml.cs">
+      <DependentUpon>ArtistUpdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Artworks\ArtworkAdd.xaml.cs">
+      <DependentUpon>ArtworkAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Artworks\ArtworkList.xaml.cs">
+      <DependentUpon>ArtworkList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Artworks\ArtworkUpdate.xaml.cs">
+      <DependentUpon>ArtworkUpdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\Artistbll.cs" />
+    <Compile Include="BLL\Artworkbll.cs" />
+    <Compile Include="Helpers\Operation.cs" />
+    <Compile Include="Users\UserAdd.xaml.cs">
+      <DependentUpon>UserAdd.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Users\UsersList.xaml.cs">
       <DependentUpon>UsersList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Users\UserUpdate.xaml.cs">
+      <DependentUpon>UserUpdate.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Artists\ArtistAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Artists\ArtistList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Artists\ArtistUpdate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Artworks\ArtworkAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Artworks\ArtworkList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Artworks\ArtworkUpdate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -98,7 +149,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Users\UserAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Users\UsersList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Users\UserUpdate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

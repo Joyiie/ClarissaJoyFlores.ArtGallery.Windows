@@ -13,24 +13,24 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ClarissaJoyFlores.ArtGallery.Windows.BLL;
 
-namespace ClarissaJoyFlores.ArtGallery.Windows.Users
+namespace ClarissaJoyFlores.ArtGallery.Windows.Artists
 {
     /// <summary>
-    /// Interaction logic for UsersList.xaml
+    /// Interaction logic for ArtistList.xaml
     /// </summary>
-    public partial class UsersList : Window
+    public partial class ArtistList : Window
     {
-        private string sortBy = "lastname";
+        private string sortBy = "name";
         private string sortOrder = "asc";
         private string keyword = "";
         private int pageSize = 1;
         private int pageIndex = 1;
         private long pageCount = 1;
-        public UsersList()
+        public ArtistList()
         {
             InitializeComponent();
 
-            cboSortBy.ItemsSource = new List<string>() { "FirstName", "LastName" };
+            cboSortBy.ItemsSource = new List<string>() { "Name" };
             cboSortOrder.ItemsSource = new List<string>() { "Ascending", "Descending" };
             showData();
 
@@ -38,10 +38,10 @@ namespace ClarissaJoyFlores.ArtGallery.Windows.Users
 
         public void showData()
         {
-            var Users = Userbll.Search(pageIndex, pageSize, sortBy, sortOrder, keyword);
+            var Artists = Artistbll.Search(pageIndex, pageSize, sortBy, sortOrder, keyword);
 
-            dgUsers.ItemsSource = Users.Items;
-            pageCount = Users.PageCount;
+            dgArtists.ItemsSource = Artists.Items;
+            pageCount = Artists.PageCount;
 
         }
 
@@ -97,9 +97,9 @@ namespace ClarissaJoyFlores.ArtGallery.Windows.Users
             }
         }
 
-        private void btnAddNew_Click(object sender, RoutedEventArgs e)
+        private void btbAddNew_Click(object sender, RoutedEventArgs e)
         {
-            Users.UserAdd listWindow = new Users.UserAdd(this);
+            Artists.ArtistAdd listWindow = new Artists.ArtistAdd(this);
             listWindow.Show();
         }
     }

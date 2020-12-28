@@ -1,0 +1,23 @@
+﻿<Window x:Class="ClarissaJoyFlores.ArtGallery.Windows.Artists.ArtistAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClarissaJoyFlores.ArtGallery.Windows.Artists"
+        mc:Ignorable="d"
+        Title="ArtistAdd" Height="450" Width="800">
+    <Grid>
+        <Label Content="Add new Artist" HorizontalAlignment="Left" Height="32" Margin="29,10,0,0" VerticalAlignment="Top" Width="162"/>
+        <Label Content="Name" HorizontalAlignment="Left" Height="27" Margin="46,73,0,0" VerticalAlignment="Top" Width="98"/>
+        <Label Content="Age" HorizontalAlignment="Left" Height="29" Margin="46,115,0,0" VerticalAlignment="Top" Width="136"/>
+        <Label Content="BirthPlace" HorizontalAlignment="Left" Height="29" Margin="46,159,0,0" VerticalAlignment="Top" Width="153"/>
+        <Label Content= "Style Of Work" HorizontalAlignment="Left" Height="29" Margin="46,198,0,0" VerticalAlignment="Top" Width="153"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="24" Margin="208,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
+        <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="24" Margin="208,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
+        <TextBox x:Name="txtBrithPlace" HorizontalAlignment="Left" Height="24" Margin="208,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
+        <TextBox x:Name="txtStyleOfWork" HorizontalAlignment="Left" Height="24" Margin="208,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Height="40" Margin="157,287,0,0" VerticalAlignment="Top" Width="138" Click="btnCancel_Click"/>
+        <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Height="40" Margin="435,287,0,0" VerticalAlignment="Top" Width="138" Click="btnAdd_Click"/>
+
+    </Grid>
+</Window>

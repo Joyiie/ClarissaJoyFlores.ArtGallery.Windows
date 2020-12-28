@@ -57,8 +57,32 @@ namespace ClarissaJoyFlores.ArtGallery.Windows.BLL
             return users;
         }
 
+        public static Operation Add(User user)
+        {
+            try
+            {
+                db.Users.Add(user);
+                db.SaveChanges();
 
-}
+                return new Operation()
+                {
+                    Code = "200",
+                    Message = "Ok",
+                    ReferenceId = user.UserID
+                };
+            }
+
+            catch (Exception e)
+            {
+                return new Operation()
+                {
+                    Code = "500",
+                    Message = e.Message
+                };
+            }
+
+        }
+    }
 }
 
 

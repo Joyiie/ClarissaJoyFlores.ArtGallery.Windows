@@ -7,7 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid x:Name="btnUsers">
-        <Button x:Name="btnUsers1" Content="Users" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Margin="28,54,0,0" Height="40" Click="btnUsers1_Click"/>
+        <Button x:Name="btnUsers1" Content="Users" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Margin="38,54,0,0" Height="40" Click="btnUsers1_Click"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="-249,207,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnArtist" Content="Artist" HorizontalAlignment="Left" Height="40" Margin="38,115,0,0" VerticalAlignment="Top" Width="110" Click="btnArtist_Click"/>
+        <Button x:Name="btnArtwork" Content="Artwork" HorizontalAlignment="Left" Height="40" Margin="38,182,0,0" VerticalAlignment="Top" Width="110" Click="btnArtwork_Click"/>
 
     </Grid>
 </Window>
