@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\DENNIS FLORES OCAMPO\Documents\ClarissaJoyFlores.ArtGallery.Windows\ClarissaJoyFlores.ArtGallery.Windows\obj\Debug\
+C:\Users\VGD 14\Desktop\joyflores\ClarissaJoyFlores.ArtGallery.Windows\obj\Debug\
 ClarissaJoyFlores.ArtGallery.Windows
 none
 false
 DEBUG;TRACE
-C:\Users\DENNIS FLORES OCAMPO\Documents\ClarissaJoyFlores.ArtGallery.Windows\ClarissaJoyFlores.ArtGallery.Windows\App.xaml
-7280869612
+C:\Users\VGD 14\Desktop\joyflores\ClarissaJoyFlores.ArtGallery.Windows\App.xaml
+12-1181334915
 
-211692832325
-26748877670
-Artists\ArtistAdd.xaml;Artists\ArtistList.xaml;Artworks\ArtworkAdd.xaml;Artworks\ArtworkList.xaml;MainWindow.xaml;Users\UserAdd.xaml;Users\UsersList.xaml;
+32-1587866399
+26-398482391
+Artists\ArtistAdd.xaml;Artists\ArtistUpdate.xaml;Artists\List.xaml;Artworks\ArtworkAdd.xaml;Artworks\ArtworkUpdate.xaml;Artworks\List.xaml;LoginWindow.xaml;MainWindow.xaml;Register.xaml;Users\List.xaml;Users\UserAdd.xaml;Users\UserUpdate.xaml;
 
 False
 

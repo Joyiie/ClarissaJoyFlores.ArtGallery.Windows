@@ -82,5 +82,118 @@ namespace ClarissaJoyFlores.ArtGallery.Windows.BLL
                 };
             }
         }
+
+
+        public static Operation Delete(Guid? artworkId)
+        {
+            try
+            {
+                Artist oldRecord = db.Artists.FirstOrDefault(a => a.ArtistID == artworkId);
+
+                if (oldRecord != null)
+                {
+                    db.Artists.Remove(oldRecord);
+
+                    db.SaveChanges();
+
+                    return new Operation()
+                    {
+                        Code = "200",
+                        Message = "OK"
+                    };
+                }
+
+                return new Operation()
+                {
+                    Code = "500",
+                    Message = "Not found"
+                };
+            }
+            catch (Exception e)
+            {
+                return new Operation()
+                {
+                    Code = "500",
+                    Message = e.Message
+                };
+            }
+        }
+
+        public static Operation Deactivate(Guid? artworkId)
+        {
+            try
+            {
+                Artist oldRecord = db.Artists.FirstOrDefault(a => a.ArtistID == artworkId);
+
+                if (oldRecord != null)
+                {
+
+
+                    db.SaveChanges();
+
+                    return new Operation()
+                    {
+                        Code = "200",
+                        Message = "OK"
+                    };
+                }
+
+                return new Operation()
+                {
+                    Code = "500",
+                    Message = "Not found"
+                };
+            }
+            catch (Exception e)
+            {
+                return new Operation()
+                {
+                    Code = "500",
+                    Message = e.Message
+                };
+            }
+        }
+
+
+        public static Operation Update(Artist newRecord)
+        {
+            try
+            {
+                Artist oldRecord = db.Artists.FirstOrDefault(a => a.ArtistID == newRecord.ArtistID);
+
+                if (oldRecord != null)
+                {
+                    oldRecord.Name = newRecord.Name;
+                    oldRecord.BirthPlace = newRecord.BirthPlace;
+                    oldRecord.Age = newRecord.Age;
+                    oldRecord.StyleOfWork = newRecord.StyleOfWork;
+
+
+                    db.SaveChanges();
+
+                    return new Operation()
+                    {
+                        Code = "200",
+                        Message = "OK"
+                    };
+                }
+
+
+                return new Operation()
+                {
+                    Code = "500",
+                    Message = "Not found"
+                };
+            }
+            catch (Exception e)
+            {
+                return new Operation()
+                {
+                    Code = "500",
+                    Message = e.Message
+                };
+            }
+        }
+
     }
 }

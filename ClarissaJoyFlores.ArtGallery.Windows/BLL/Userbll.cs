@@ -7,6 +7,7 @@ using ClarissaJoyFlores.ArtGallery.Windows.DAL;
 using ClarissaJoyFlores.ArtGallery.Windows.BLL;
 using ClarissaJoyFlores.ArtGallery.Windows.Helpers;
 using ClarissaJoyFlores.ArtGallery.Windows.Models;
+using ClarissaJoyFlores.ArtGallery.Windows.Enums;
 
 namespace ClarissaJoyFlores.ArtGallery.Windows.BLL
 {
@@ -57,6 +58,12 @@ namespace ClarissaJoyFlores.ArtGallery.Windows.BLL
             return users;
         }
 
+        public static List<Role> GetRoles(Guid? id)
+        {
+            return db.UserRoles.Where(ur => ur.UserId == id).Select(ur => ur.Role).ToList();
+        }
+
+
         public static Operation Add(User user)
         {
             try
@@ -81,6 +88,186 @@ namespace ClarissaJoyFlores.ArtGallery.Windows.BLL
                 };
             }
 
+        }
+
+        public static Operation Delete(Guid? userId)
+        {
+            try
+            {
+                User oldRecord = db.Users.FirstOrDefault(e => e.UserID == userId);
+
+                if (oldRecord != null)
+                {
+                    db.Users.Remove(oldRecord);
+
+                    db.SaveChanges();
+
+                    return new Operation()
+                    {
+                        Code = "200",
+                        Message = "OK"
+                    };
+                }
+
+                return new Operation()
+                {
+                    Code = "500",
+                    Message = "Not found"
+                };
+            }
+            catch (Exception e)
+            {
+                return new Operation()
+                {
+                    Code = "500",
+                    Message = e.Message
+                };
+            }
+        }
+
+        public static Operation Deactivate(Guid? userId)
+        {
+            try
+            {
+                User oldRecord = db.Users.FirstOrDefault(u => u.UserID == userId);
+
+                if (oldRecord != null)
+                {
+
+
+                    db.SaveChanges();
+
+                    return new Operation()
+                    {
+                        Code = "200",
+                        Message = "OK"
+                    };
+                }
+
+                return new Operation()
+                {
+                    Code = "500",
+                    Message = "Not found"
+                };
+            }
+            catch (Exception e)
+            {
+                return new Operation()
+                {
+                    Code = "500",
+                    Message = e.Message
+                };
+            }
+        }
+
+
+        public static Operation UpdateUser(User newRecord)
+        {
+            try
+            {
+                User oldRecord = db.Users.FirstOrDefault(e => e.UserID == newRecord.UserID);
+
+                if (oldRecord != null)
+                {
+                    oldRecord.FirstName = newRecord.FirstName;
+                    oldRecord.LastName = newRecord.LastName;
+                    oldRecord.Email = newRecord.Email;
+                    oldRecord.Password = newRecord.Password;
+                    oldRecord.Address = newRecord.Address;
+                    oldRecord.ContactNumber = newRecord.ContactNumber;
+                    oldRecord.Sex = newRecord.Sex;
+
+                    db.SaveChanges();
+
+                    return new Operation()
+                    {
+                        Code = "200",
+                        Message = "OK"
+                    };
+                }
+
+
+                return new Operation()
+                {
+                    Code = "500",
+                    Message = "Not found"
+                };
+            }
+            catch (Exception e)
+            {
+                return new Operation()
+                {
+                    Code = "500",
+                    Message = e.Message
+                };
+            }
+        }
+
+
+
+        public static User GetById(Guid? id)
+        {
+            return db.Users.FirstOrDefault(u => u.UserID == id);
+        }
+
+
+        public static Operation Login(string emailAddress = "", string password = "")
+        {
+            if (string.IsNullOrEmpty(emailAddress))
+            {
+                return new Operation()
+                {
+                    Code = "500",
+                    Message = "Invalid Login"
+                };
+            }
+
+            if (string.IsNullOrEmpty(password))
+            {
+                return new Operation()
+                {
+                    Code = "500",
+                    Message = "Invalid Login"
+                };
+            }
+
+            try
+            {
+                User user = db.Users.FirstOrDefault(u => u.Email.ToLower() == emailAddress.ToLower());
+
+                if (user == null)
+                {
+                    return new Operation()
+                    {
+                        Code = "500",
+                        Message = "Invalid Login"
+                    };
+                }
+
+                if (password == user.Password)
+                {
+                    return new Operation()
+                    {
+                        Code = "200",
+                        Message = "Successful Login",
+                        ReferenceId = user.UserID
+                    };
+                }
+
+                return new Operation()
+                {
+                    Code = "500",
+                    Message = "Invalid Login"
+                };
+            }
+            catch (Exception e)
+            {
+                return new Operation()
+                {
+                    Code = "500",
+                    Message = e.Message
+                };
+            }
         }
     }
 }

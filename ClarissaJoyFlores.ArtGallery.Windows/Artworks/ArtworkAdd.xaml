@@ -18,6 +18,7 @@
         <TextBox x:Name="txtMedium" HorizontalAlignment="Left" Height="24" Margin="208,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
         <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Height="40" Margin="157,287,0,0" VerticalAlignment="Top" Width="138" Click="btnCancel_Click"/>
         <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Height="40" Margin="435,287,0,0" VerticalAlignment="Top" Width="138" Click="btnAdd_Click"/>
+        <TextBlock x:Name="txtError" HorizontalAlignment="Left" Margin="403,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="66" Width="367"/>
 
     </Grid>
 </Window>

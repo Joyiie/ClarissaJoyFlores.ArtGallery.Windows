@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="ArtworkUpdate" Height="450" Width="800">
     <Grid>
-        <Label Content="Add new Artwork" HorizontalAlignment="Left" Height="32" Margin="29,10,0,0" VerticalAlignment="Top" Width="162"/>
+        <Label Content="Update new Artwork" HorizontalAlignment="Left" Height="32" Margin="29,10,0,0" VerticalAlignment="Top" Width="162"/>
         <Label Content="Title" HorizontalAlignment="Left" Height="27" Margin="46,73,0,0" VerticalAlignment="Top" Width="98"/>
         <Label Content="Year" HorizontalAlignment="Left" Height="29" Margin="46,115,0,0" VerticalAlignment="Top" Width="136"/>
         <Label Content="Content" HorizontalAlignment="Left" Height="29" Margin="46,159,0,0" VerticalAlignment="Top" Width="153"/>
@@ -16,8 +16,9 @@
         <TextBox x:Name="txtYear" HorizontalAlignment="Left" Height="24" Margin="208,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
         <TextBox x:Name="txtContent" HorizontalAlignment="Left" Height="24" Margin="208,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
         <TextBox x:Name="txtMedium" HorizontalAlignment="Left" Height="24" Margin="208,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
-        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Height="40" Margin="157,287,0,0" VerticalAlignment="Top" Width="138" Click="btnCancel_Click"/>
-        <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Height="40" Margin="435,287,0,0" VerticalAlignment="Top" Width="138" Click="btnAdd_Click"/>
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Height="42" Margin="147,285,0,0" VerticalAlignment="Top" Width="114" Click="btnCancel_Click"/>
+        <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Height="42" Margin="323,285,0,0" VerticalAlignment="Top" Width="114" Click="btnAdd_Click"/>
+        <TextBlock x:Name="txtError" HorizontalAlignment="Left" Margin="403,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="66" Width="367"/>
 
     </Grid>
 </Window>

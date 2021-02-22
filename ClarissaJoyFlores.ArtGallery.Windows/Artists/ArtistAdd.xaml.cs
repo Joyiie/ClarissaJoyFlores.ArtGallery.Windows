@@ -21,9 +21,9 @@ namespace ClarissaJoyFlores.ArtGallery.Windows.Artists
     /// </summary>
     public partial class ArtistAdd : Window
     {
-        ArtistList myParentWindow = new ArtistList();
+        List myParentWindow = new List();
         
-        public ArtistAdd(ArtistList parentWindow)
+        public ArtistAdd(List parentWindow)
 
         {
             InitializeComponent();
@@ -37,15 +37,46 @@ namespace ClarissaJoyFlores.ArtGallery.Windows.Artists
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
+            List<string> errors = new List<string>();
+            if (string.IsNullOrEmpty(txtName.Text))
+            {
+                errors.Add("Name is required.");
+            };
+
+            if (string.IsNullOrEmpty(txtBrithPlace.Text))
+            {
+                errors.Add("BirthPlace is required.");
+            };
+
+            if (string.IsNullOrEmpty(txtAge.Text))
+            {
+                errors.Add("Age is required.");
+            };
+
+            if (string.IsNullOrEmpty(txtStyleOfWork.Text))
+            {
+                errors.Add("StyleOfWork is required.");
+            };
+            if (errors.Count > 0)
+            {
+                foreach (var error in errors)
+                {
+                    txtError.Text = txtError.Text + error + "\n";
+                }
+
+                return;
+            }
+
+
             var op = Artistbll.Add(new Artist()
             {
                 ArtistID = Guid.NewGuid(),
                 Name = txtName.Text,
+                BirthPlace = txtBrithPlace.Text,
                 Age = txtAge.Text,
-                BirthPlace = txtAge.Text,
                 StyleOfWork = txtStyleOfWork.Text,
 
-            }); ; ;
+            });
 
             if (op.Code != "200")
             {
@@ -54,11 +85,12 @@ namespace ClarissaJoyFlores.ArtGallery.Windows.Artists
 
             else
             {
-                MessageBox.Show("Artist is successfully added to table");
+                MessageBox.Show("Artwork is successfully added to table");
             }
 
             myParentWindow.showData();
             this.Close();
+
         }
 
     }

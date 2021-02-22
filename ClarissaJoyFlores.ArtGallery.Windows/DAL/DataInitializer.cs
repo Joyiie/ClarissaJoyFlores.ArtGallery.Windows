@@ -8,8 +8,9 @@ namespace ClarissaJoyFlores.ArtGallery.Windows.DAL
 {
    public class DataInitializer  : System.Data.Entity.DropCreateDatabaseAlways<ArtGalleryDbContext>
     {
-     protected override void Seed(ArtGalleryDbContext context) 
+     protected override void Seed(ArtGalleryDbContext context)
         {
+            #region  Users
             context.Users.Add(new Models.User()
             {
 
@@ -300,6 +301,30 @@ namespace ClarissaJoyFlores.ArtGallery.Windows.DAL
 
 
             });
+            #endregion
+
+            #region Artist
+
+
+            context.Artists.Add(new Models.Artist()
+            {
+                ArtistID = Guid.Parse("c8bd6bfd-43df-4d36-930b-463bc154b19f"),
+                Name = "Paul Cezanne",
+                BirthPlace = "France",
+                Age = "91",
+                StyleOfWork = "Drawing, Painting",
+
+            });
+
+            context.Artists.Add(new Models.Artist()
+            {
+                ArtistID = Guid.Parse("c8bd6bfd-43df-4d36-930b-463bc154b20f"),
+                Name = "Caravaggio",
+                BirthPlace = "Italy",
+                Age = "94",
+                StyleOfWork = "Drawing, Painting, Biography",
+
+            });
 
             context.Artists.Add(new Models.Artist()
             {
@@ -311,13 +336,13 @@ namespace ClarissaJoyFlores.ArtGallery.Windows.DAL
 
             });
 
-            context.Artworks.Add(new Models.Artwork()
+            context.Artists.Add(new Models.Artist()
             {
-                ArtistID = Guid.Parse("c8bd6bfd-43df-4d36-930b-463bc154b11f"),
-                Title = "Mona Lisa",
-                Year = "c. 1503–19",
-                Content = "Sitter’s mysterious gaze and enigmatic smile.",
-                Medium = "oil on wood panel",
+                ArtistID = Guid.Parse("c8bd6bfd-43df-4d36-930b-463bc154b18f"),
+                Name = "Marcel Duchamp",
+                BirthPlace = "France",
+                Age = "97",
+                StyleOfWork = "Painting, Sculpture, Writer, Ches Player",
 
             });
 
@@ -333,16 +358,7 @@ namespace ClarissaJoyFlores.ArtGallery.Windows.DAL
 
             });
 
-            context.Artworks.Add(new Models.Artwork()
-            {
-                ArtistID = Guid.Parse("c8bd6bfd-43df-4d36-930b-463bc154b12f"),
-                Title = "The Old Guitarist",
-                Year = "1903",
-                Content = "The Man with the Blue Guitar",
-                Medium = " oil painting ",
-
-            });
-
+ 
             context.Artists.Add(new Models.Artist()
             {
                 ArtistID = Guid.Parse("c8bd6bfd-43df-4d36-930b-463bc154b13f"),
@@ -352,15 +368,7 @@ namespace ClarissaJoyFlores.ArtGallery.Windows.DAL
                 StyleOfWork = "Biography, Painting, Drawing",
             });
 
-            context.Artworks.Add(new Models.Artwork()
-            {
-                ArtistID = Guid.Parse("c8bd6bfd-43df-4d36-930b-463bc154b13f"),
-                Title = "The Yellow House",
-                Year = "1888",
-                Content = "",
-                Medium = "Oil on canvas",
-
-            });
+        
 
             context.Artists.Add(new Models.Artist()
             {
@@ -372,15 +380,6 @@ namespace ClarissaJoyFlores.ArtGallery.Windows.DAL
 
             });
 
-            context.Artworks.Add(new Models.Artwork()
-            {
-                ArtistID = Guid.Parse("c8bd6bfd-43df-4d36-930b-463bc154b14f"),
-                Title = "Impression, Sunrise",
-                Year = "1872",
-                Content = "It was intended as disparagement but the Impressionists appropriated the term for themselves",
-                Medium = "Oil on canvas",
-
-            });
 
             context.Artists.Add(new Models.Artist()
             {
@@ -392,15 +391,7 @@ namespace ClarissaJoyFlores.ArtGallery.Windows.DAL
 
             });
 
-            context.Artworks.Add(new Models.Artwork()
-            {
-                ArtistID = Guid.Parse("c8bd6bfd-43df-4d36-930b-463bc154b15f"),
-                Title = "The Prodigal Son in the Brothel",
-                Year = "1637",
-                Content = " two people who had been identified as Rembrandt himself and his wife Saskia",
-                Medium = "Oil on Cnvas",
 
-            });
 
             context.Artists.Add(new Models.Artist()
             {
@@ -412,15 +403,6 @@ namespace ClarissaJoyFlores.ArtGallery.Windows.DAL
 
             });
 
-            context.Artworks.Add(new Models.Artwork()
-            {
-                ArtistID = Guid.Parse("c8bd6bfd-43df-4d36-930b-463bc154b16f"),
-                Title = "The Last Judgment",
-                Year = "1536–1541",
-                Content = " It is a depiction of the Second Coming of Christ and the final and eternal judgment by God of all humanity. The dead rise and descend to their fates, as judged by Christ who is surrounded by prominent saints",
-                Medium = "Orange, green, yellow, and blue are scattered throughout, animating and unifying the complex scene.",
-
-            });
 
             context.Artists.Add(new Models.Artist()
             {
@@ -429,6 +411,66 @@ namespace ClarissaJoyFlores.ArtGallery.Windows.DAL
                 BirthPlace = "United State",
                 Age = "92",
                 StyleOfWork = "Drawing, Painting, Biography, Abstract",
+
+            });
+            #endregion
+
+
+            #region Artwork
+            context.Artworks.Add(new Models.Artwork()
+            {
+                ArtistID = Guid.Parse("c8bd6bfd-43df-4d36-930b-463bc154b18f"),
+                Title = "Nude Descending a Staircase, No. 2 ",
+                Year = "1912",
+                Content = "sad young man who is in a corridor and who is moving about; thus there are two parallel movements corresponding to each other",
+                Medium = "Oil on canvas",
+
+            });
+
+            context.Artworks.Add(new Models.Artwork()
+            {
+                ArtistID = Guid.Parse("c8bd6bfd-43df-4d36-930b-463bc154b19f"),
+                Title = "The Bathers",
+                Year = "1898–1905",
+                Content = "treat nature in terms of the cylinder, the sphere and the cone",
+                Medium = "Oil-on-canvas",
+
+            }); context.Artworks.Add(new Models.Artwork()
+            {
+                ArtistID = Guid.Parse("c8bd6bfd-43df-4d36-930b-463bc154b20f"),
+                Title = "The Musicians",
+                Year = "1595",
+                Content = "painted for the Cardinal youths playing music very well drawn from nature and also a youth playing a lute",
+                Medium = "Oil on canvas",
+
+            });
+            context.Artworks.Add(new Models.Artwork()
+            {
+                ArtistID = Guid.Parse("c8bd6bfd-43df-4d36-930b-463bc154b14f"),
+                Title = "Impression, Sunrise",
+                Year = "1872",
+                Content = "It was intended as disparagement but the Impressionists appropriated the term for themselves",
+                Medium = "Oil on canvas",
+
+            });
+            context.Artworks.Add(new Models.Artwork()
+            {
+                ArtistID = Guid.Parse("c8bd6bfd-43df-4d36-930b-463bc154b15f"),
+                Title = "The Prodigal Son in the Brothel",
+                Year = "1637",
+                Content = " two people who had been identified as Rembrandt himself and his wife Saskia",
+                Medium = "Oil on Cnvas",
+
+            });
+
+
+            context.Artworks.Add(new Models.Artwork()
+            {
+                ArtistID = Guid.Parse("c8bd6bfd-43df-4d36-930b-463bc154b16f"),
+                Title = "The Last Judgment",
+                Year = "1536–1541",
+                Content = " It is a depiction of the Second Coming of Christ and the final and eternal judgment by God of all humanity. The dead rise and descend to their fates, as judged by Christ who is surrounded by prominent saints",
+                Medium = "Orange, green, yellow, and blue are scattered throughout, animating and unifying the complex scene.",
 
             });
 
@@ -442,65 +484,42 @@ namespace ClarissaJoyFlores.ArtGallery.Windows.DAL
 
             });
 
-            context.Artists.Add(new Models.Artist()
+            context.Artworks.Add(new Models.Artwork()
             {
-                ArtistID = Guid.Parse("c8bd6bfd-43df-4d36-930b-463bc154b18f"),
-                Name = "Marcel Duchamp",
-                BirthPlace = "France",
-                Age = "97",
-                StyleOfWork = "Painting, Sculpture, Writer, Ches Player",
+                ArtistID = Guid.Parse("c8bd6bfd-43df-4d36-930b-463bc154b11f"),
+                Title = "Mona Lisa",
+                Year = "c. 1503–19",
+                Content = "Sitter’s mysterious gaze and enigmatic smile.",
+                Medium = "oil on wood panel",
 
             });
 
             context.Artworks.Add(new Models.Artwork()
             {
-                ArtistID = Guid.Parse("c8bd6bfd-43df-4d36-930b-463bc154b18f"),
-                Title = "Nude Descending a Staircase, No. 2 ",
-                Year = "1912",
-                Content = "sad young man who is in a corridor and who is moving about; thus there are two parallel movements corresponding to each other",
+                ArtistID = Guid.Parse("c8bd6bfd-43df-4d36-930b-463bc154b12f"),
+                Title = "The Old Guitarist",
+                Year = "1903",
+                Content = "The Man with the Blue Guitar",
+                Medium = " oil painting ",
+
+            });
+
+            context.Artworks.Add(new Models.Artwork()
+            {
+                ArtistID = Guid.Parse("c8bd6bfd-43df-4d36-930b-463bc154b13f"),
+                Title = "The Yellow House",
+                Year = "1888",
+                Content = "",
                 Medium = "Oil on canvas",
 
             });
+            #endregion
 
-            context.Artists.Add(new Models.Artist()
-            {
-                ArtistID = Guid.Parse("c8bd6bfd-43df-4d36-930b-463bc154b19f"),
-                Name = "Paul Cezanne",
-                BirthPlace = "France",
-                Age = "91",
-                StyleOfWork = "Drawing, Painting",
 
-            });
 
-            context.Artworks.Add(new Models.Artwork()
-            {
-                ArtistID = Guid.Parse("c8bd6bfd-43df-4d36-930b-463bc154b19f"),
-                Title = "The Bathers",
-                Year = "1898–1905",
-                Content = "treat nature in terms of the cylinder, the sphere and the cone",
-                Medium = "Oil-on-canvas",
+        
 
-            });
-
-            context.Artists.Add(new Models.Artist()
-            {
-                ArtistID = Guid.Parse("c8bd6bfd-43df-4d36-930b-463bc154b20f"),
-                Name = "Caravaggio",
-                BirthPlace = "Italy",
-                Age = "94",
-                StyleOfWork = "Drawing, Painting, Biography",
-
-            });
-
-            context.Artworks.Add(new Models.Artwork()
-            {
-                ArtistID = Guid.Parse("c8bd6bfd-43df-4d36-930b-463bc154b20f"),
-                Title = "The Musicians",
-                Year = "1595",
-                Content = "painted for the Cardinal youths playing music very well drawn from nature and also a youth playing a lute",
-                Medium = "Oil on canvas",
-
-            });
+          
 
             context.SaveChanges();
         }

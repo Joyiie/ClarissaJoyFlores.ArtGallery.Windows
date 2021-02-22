@@ -7,10 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid x:Name="btnUsers">
-        <Button x:Name="btnUsers1" Content="Users" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Margin="38,54,0,0" Height="40" Click="btnUsers1_Click"/>
         <Button Content="Button" HorizontalAlignment="Left" Margin="-249,207,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btnArtist" Content="Artist" HorizontalAlignment="Left" Height="40" Margin="38,115,0,0" VerticalAlignment="Top" Width="110" Click="btnArtist_Click"/>
-        <Button x:Name="btnArtwork" Content="Artwork" HorizontalAlignment="Left" Height="40" Margin="38,182,0,0" VerticalAlignment="Top" Width="110" Click="btnArtwork_Click"/>
+        <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="671,29,0,0" VerticalAlignment="Top" Width="75" Click="BtnLogout_Click"/>
+        <Label x:Name="lblUserName" Content="" HorizontalAlignment="Left" Margin="393,23,0,0" VerticalAlignment="Top" Width="255"/>
+        <Button x:Name="btnRegister" Content="Register" HorizontalAlignment="Left" Margin="568,28,0,0" VerticalAlignment="Top" Width="80" Height="21" Click="BtnRegister_Click"/>
+        <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Left" Margin="465,28,0,0" VerticalAlignment="Top" Width="75" Click="BtnLogin_Click"/>
 
     </Grid>
 </Window>

@@ -18,8 +18,10 @@ namespace ClarissaJoyFlores.ArtGallery.Windows.DAL
             Database.SetInitializer(new ClarissaJoyFlores.ArtGallery.Windows.DAL.DataInitializer());
         }
         public DbSet<Models.User> Users { get; set; }
+        public DbSet<Models.UserRole> UserRoles { get; set; }
         public DbSet<Models.Artist> Artists { get; set; }
         public DbSet<Models.Artwork> Artworks { get; set; }
+
 
     }
 

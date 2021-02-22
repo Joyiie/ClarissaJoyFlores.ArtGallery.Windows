@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="UserUpdate" Height="450" Width="800">
     <Grid>
-        <Label Content="Add new User" HorizontalAlignment="Left" Height="32" Margin="46,10,0,0" VerticalAlignment="Top" Width="162"/>
+        <Label Content="Update User" HorizontalAlignment="Left" Height="32" Margin="46,10,0,0" VerticalAlignment="Top" Width="162"/>
         <Label Content="First Name" HorizontalAlignment="Left" Height="27" Margin="46,73,0,0" VerticalAlignment="Top" Width="108"/>
         <Label Content="Last Name" HorizontalAlignment="Left" Height="29" Margin="46,115,0,0" VerticalAlignment="Top" Width="136"/>
         <Label Content="Address" HorizontalAlignment="Left" Height="29" Margin="46,159,0,0" VerticalAlignment="Top" Width="153"/>
@@ -16,10 +16,15 @@
         <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="24" Margin="209,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
         <TextBox x:Name="txtAddress" HorizontalAlignment="Left" Height="24" Margin="209,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
         <TextBox x:Name="txtSex" HorizontalAlignment="Left" Height="24" Margin="209,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
-        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Height="40" Margin="157,349,0,0" VerticalAlignment="Top" Width="138" Click="btnCancel_Click"/>
-        <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Height="40" Margin="439,349,0,0" VerticalAlignment="Top" Width="138" Click="btnAdd_Click"/>
-        <Label Content= "Email" HorizontalAlignment="Left" Height="29" Margin="46,244,0,0" VerticalAlignment="Top" Width="153"/>
-        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="24" Margin="209,238,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Height="30" Margin="355,369,0,0" VerticalAlignment="Top" Width="84" Click="btnCancel_Click"/>
+        <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Height="30" Margin="490,369,0,0" VerticalAlignment="Top" Width="85" Click="btnAdd_Click"/>
+        <Label Content= "Email" HorizontalAlignment="Left" Height="29" Margin="46,281,0,0" VerticalAlignment="Top" Width="153"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="24" Margin="209,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
+        <Label Content= "Password" HorizontalAlignment="Left" Height="29" Margin="46,328,0,0" VerticalAlignment="Top" Width="153"/>
+        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="24" Margin="209,322,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
+        <Label Content= "Contact-Number" HorizontalAlignment="Left" Height="29" Margin="46,239,0,0" VerticalAlignment="Top" Width="153"/>
+        <TextBox x:Name="txtContactNumber" HorizontalAlignment="Left" Height="24" Margin="209,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
+        <TextBlock x:Name="txtError" HorizontalAlignment="Left" Height="110" Margin="396,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="369"/>
 
     </Grid>
 </Window>

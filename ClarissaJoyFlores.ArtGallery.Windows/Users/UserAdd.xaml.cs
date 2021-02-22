@@ -22,8 +22,8 @@ namespace ClarissaJoyFlores.ArtGallery.Windows.Users
     /// </summary>
     public partial class UserAdd : Window
     {
-        UsersList myParentWindow = new UsersList();
-        public UserAdd(UsersList parentWindow)
+        List myParentWindow = new List();
+        public UserAdd(List parentWindow)
         {
             InitializeComponent();
             myParentWindow = parentWindow;
@@ -36,6 +36,53 @@ namespace ClarissaJoyFlores.ArtGallery.Windows.Users
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
+            List<string> errors = new List<string>();
+            if (string.IsNullOrEmpty(txtFirstName.Text))
+            {
+                errors.Add("FirstName is required.");
+            };
+
+            if (string.IsNullOrEmpty(txtLastName.Text))
+            {
+                errors.Add("LastName is required.");
+            };
+
+            if (string.IsNullOrEmpty(txtAddress.Text))
+            {
+                errors.Add("Address is required.");
+            };
+
+            if (string.IsNullOrEmpty(txtSex.Text))
+            {
+                errors.Add("Sex is required.");
+            };
+
+            if (string.IsNullOrEmpty(txtContactNumber.Text))
+            {
+                errors.Add("Contact-Number is required.");
+            };
+
+            if (string.IsNullOrEmpty(txtEmail.Text))
+            {
+                errors.Add("Email is required.");
+            };
+
+            if (string.IsNullOrEmpty(txtPassword.Text))
+            {
+                errors.Add("Password is required.");
+            };
+
+            if (errors.Count > 0)
+            {
+                foreach (var error in errors)
+                {
+                    txtError.Text = txtError.Text + error + "\n";
+                }
+
+                return;
+            }
+
+
             var op = Userbll.Add(new User()
             {
                 UserID = Guid.NewGuid(),
@@ -43,9 +90,10 @@ namespace ClarissaJoyFlores.ArtGallery.Windows.Users
                 LastName = txtLastName.Text,
                 Address = txtAddress.Text,
                 Sex = txtSex.Text,
+                ContactNumber = txtContactNumber.Text,
                 Email = txtEmail.Text,
-
-            }); ; ;
+                Password = txtPassword.Text
+            }); 
 
             if (op.Code != "200")
             {

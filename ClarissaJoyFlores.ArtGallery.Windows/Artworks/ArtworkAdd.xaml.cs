@@ -21,8 +21,8 @@ namespace ClarissaJoyFlores.ArtGallery.Windows.Artworks
     /// </summary>
     public partial class ArtworkAdd : Window
     {
-        ArtworkList myParentWindow = new ArtworkList();
-        public ArtworkAdd(ArtworkList parentWindow)
+        List myParentWindow = new List();
+        public ArtworkAdd(List parentWindow)
         {
             InitializeComponent();
             myParentWindow = parentWindow;
@@ -35,15 +35,46 @@ namespace ClarissaJoyFlores.ArtGallery.Windows.Artworks
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
+            List<string> errors = new List<string>();
+            if (string.IsNullOrEmpty(txtTitle.Text))
+            {
+                errors.Add("Title is required.");
+            };
+
+            if (string.IsNullOrEmpty(txtContent.Text))
+            {
+                errors.Add("Content is required.");
+            };
+
+            if (string.IsNullOrEmpty(txtMedium.Text))
+            {
+                errors.Add("Medium is required.");
+            };
+
+            if (string.IsNullOrEmpty(txtYear.Text))
+            {
+                errors.Add("Year is required.");
+            };
+            if (errors.Count > 0)
+            {
+                foreach (var error in errors)
+                {
+                    txtError.Text = txtError.Text + error + "\n";
+                }
+
+                return;
+            }
+
+
             var op = Artworkbll.Add(new Artwork()
             {
                 ArtistID = Guid.NewGuid(),
                 Title = txtTitle.Text,
-                Year = txtYear.Text,
                 Content = txtContent.Text,
+                Year = txtYear.Text,
                 Medium = txtMedium.Text,
-
-            }); ; ;
+                
+            });
 
             if (op.Code != "200")
             {
@@ -57,6 +88,7 @@ namespace ClarissaJoyFlores.ArtGallery.Windows.Artworks
 
             myParentWindow.showData();
             this.Close();
+
         }
 
     }

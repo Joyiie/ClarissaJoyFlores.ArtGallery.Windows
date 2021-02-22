@@ -13,8 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ClarissaJoyFlores.ArtGallery.Windows.DAL;
-
-
+using ClarissaJoyFlores.ArtGallery.Windows.Helpers;
 
 namespace ClarissaJoyFlores.ArtGallery.Windows
 {
@@ -38,22 +37,33 @@ namespace ClarissaJoyFlores.ArtGallery.Windows
 
         }
 
-        private void btnArtist_Click(object sender, RoutedEventArgs e)
+        private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
-            Artists.ArtistList listWindow = new Artists.ArtistList();
-            listWindow.Show();
+            LoginWindow login = new LoginWindow();
+            login.Show();
         }
 
-        private void btnArtwork_Click(object sender, RoutedEventArgs e)
+       
+
+        private void BtnLogout_Click(object sender, RoutedEventArgs e)
         {
-            Artworks.ArtworkList listWindow = new Artworks.ArtworkList();
-            listWindow.Show();
+            ProgramUser.Id = null;
+            ProgramUser.FirstName = null;
+            ProgramUser.LastName = null;
+            ProgramUser.EmailAddress = null;
+            ProgramUser.Roles = null;
+
+            LoginWindow login = new LoginWindow();
+            login.Show();
+
+            this.Close();
+
         }
 
-        private void btnUsers1_Click(object sender, RoutedEventArgs e)
-        {
-            Users.UsersList listWindow = new Users.UsersList();
-            listWindow.Show();
+        private void BtnRegister_Click(object sender, RoutedEventArgs e)
+{//{
+        //    Register registerWindown = new Register();
+        //    registerWindown.Show();
         }
     }
 }
